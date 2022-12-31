@@ -1,6 +1,6 @@
 [package]
 name = "healthkit-to-sqlite-cli"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 authors = ["Justin Shrake"]
 license = "MIT OR Apache-2.0"
