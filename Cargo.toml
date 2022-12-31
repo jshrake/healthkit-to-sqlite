@@ -1,7 +1,19 @@
 [package]
 name = "healthkit-to-sqlite-cli"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
+authors = ["Justin Shrake"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/jshrake/healthkit-to-sqlite"
+repository = "https://github.com/jshrake/healthkit-to-sqlite"
+documentation = "https://docs.rs/healthkit-to-sqlite-cli"
+description = """
+Command-line tool to convert Apple HealthKit data to a SQLite database. 
+"""
+categories = ["science", "database", "visualization"]
+autotests = false
+exclude = ["/example/*", "/.github/*"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [[bin]]
