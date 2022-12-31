@@ -2,7 +2,6 @@
 
 [![ci](https://github.com/jshrake/healthkit-to-sqlite/actions/workflows/ci.yml/badge.svg)](https://github.com/jshrake/healthkit-to-sqlite/actions)
 [![crates.io](https://img.shields.io/crates/v/healthkit-to-sqlite-cli.svg)](https://crates.io/crates/healthkit-to-sqlite-cli)
-[![Rust](https://img.shields.io/badge/rust-1.66%2B-blue.svg)](https://github.com/jshrake/healthkit-to-sqlite)
 [![Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
