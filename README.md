@@ -12,11 +12,11 @@ Command-line tool to convert Apple HealthKit data to a SQLite database.
 
 ## Getting Started
 
-1. Open the "Health" app on your iOS device
-2. Click your profile icon located at the top-right
-3. Click "Export All health Data"
-4. Share the resulting ZIP archive to your computer
-5. Run the healthkit-to-sqlite tool on the exported ZIP archive
+1. Open the [Health](https://www.apple.com/ios/health/) app on your iOS device.
+2. Click your profile icon in the top-right corner.
+3. Click the "Export All Health Data" button.
+4. Share the resulting ZIP archive to your computer.
+5. Run the healthkit-to-sqlite tool on the exported ZIP archive.
 
 ```bash
 cargo install healthkit-to-sqlite-cli
