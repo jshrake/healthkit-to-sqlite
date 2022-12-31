@@ -20,7 +20,7 @@ Command-line tool to convert Apple HealthKit data to a SQLite database.
 
 ```bash
 cargo install healthkit-to-sqlite-cli
-healthkit-to-sqlite export.zip
+healthkit-to-sqlite export.zip sqlite://healthkit.db
 ```
 
 ### Datasette
@@ -29,7 +29,7 @@ You can use <https://datasette.io/> to view and explore the resulting SQLite dat
 
 ```bash
 datasette install datasette-geojson-map
-datasette healthkit.db sqlite://healthkit.db 
+datasette healthkit.db
 ```
 
 ## Decisions
