@@ -22,7 +22,7 @@ cargo install healthkit-to-sqlite-cli
 healthkit-to-sqlite export.zip sqlite://healthkit.db
 ```
 
-Please [create an issue](https://github.com/jshrake/healthkit-to-sqlite/issues/new) for all bugs, feature requests, or feedback.
+Please [create an issue](https://github.com/jshrake/healthkit-to-sqlite/issues/new/choose) for all bugs, feature requests, or feedback.
 
 ### Datasette
 
