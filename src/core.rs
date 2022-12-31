@@ -75,6 +75,13 @@ pub async fn healthkit_to_sqlite(
     Ok(())
 }
 
+/// Converts an arbitrary string to a valid SQLite identifier
+/// This currently isn't robust enough to handle all possible strings
+/// But it's good enough for now. See https://stackoverflow.com/a/6701665
+fn get_valid_sqlite_identifier(s: &str) -> String {
+    format!("`{}`", s)
+}
+
 /// Derives and creates the SQLite tables from the exported HealthKit XML
 async fn sqlite_create_healthkit_tables<R: BufRead>(
     tx: &mut Transaction<'_, Sqlite>,
@@ -115,7 +122,7 @@ async fn sqlite_create_healthkit_tables<R: BufRead>(
             name,
             columns
                 .iter()
-                .map(|(name, ty)| format!("`{}` {}", name, ty))
+                .map(|(name, ty)| format!("{} {}", get_valid_sqlite_identifier(name), ty))
                 .collect::<Vec<_>>()
                 .join(", ")
         );
@@ -687,8 +694,8 @@ async fn insert_database_row(
         r#"INSERT INTO {} ({}) VALUES ({})"#,
         table_name,
         row.iter()
-            .map(|(name, _)| name.as_str())
-            .collect::<Vec<&str>>()
+            .map(|(name, _)| get_valid_sqlite_identifier(name))
+            .collect::<Vec<_>>()
             .join(", "),
         row.iter()
             .map(|(_, _)| "?")
