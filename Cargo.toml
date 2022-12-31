@@ -1,0 +1,26 @@
+[package]
+name = "healthkit-to-sqlite-cli"
+version = "0.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "healthkit-to-sqlite"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.68"
+clap = {version = "4.0.32", features = ["derive", "env"]}
+console = "0.15.3"
+dialoguer = "0.10.2"
+dotenv = "0.15.0"
+env_logger = "0.10.0"
+indicatif = "0.17.2"
+lazy_static = "1.4.0"
+log = "0.4.17"
+quick-xml = "0.26.0"
+serde_json = "1.0.91"
+sqlx = { version = "0.6.2", features = ["runtime-tokio-native-tls", "sqlite", "json", "time"] }
+time = {version = "0.3.17" }
+tokio = { version = "1", features = ["full"] }
+zip = "0.6.3"
