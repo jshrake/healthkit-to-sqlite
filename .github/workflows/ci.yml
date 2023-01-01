@@ -20,4 +20,4 @@ jobs:
       - name: Run tests
         run: cargo test --verbose
       - name: Run against example/export.zip
-        run: cargo run --release --verbose -- example/export.zip sqlite://healthkit.db --drop --force --quiet
+        run: cargo run --release --verbose -- example/export.zip sqlite://healthkit.db --drop --yes --quiet

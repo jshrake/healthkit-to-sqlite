@@ -22,9 +22,9 @@ struct Cli {
         long
     )]
     drop: bool,
-    #[arg(help = "Ignore prompts", short, long)]
-    force: bool,
-    #[arg(help = "Disable CLI output to stdout", short, long)]
+    #[arg(help = "Responds yes to all prompts", short, long)]
+    yes: bool,
+    #[arg(help = "Minimize stdout output", short, long)]
     quiet: bool,
 }
 
@@ -41,7 +41,7 @@ async fn main() -> anyhow::Result<()> {
     if sqlx::Sqlite::database_exists(database_uri).await? {
         let drop_prompt = format!("The database at \"{}\" already exists. Do you want to drop it? This will delete all data in the database.", database_uri);
         if cli.drop
-            && (cli.force
+            && (cli.yes
                 || Confirm::with_theme(&ColorfulTheme::default())
                     .with_prompt(drop_prompt)
                     .default(false)
