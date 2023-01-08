@@ -18,6 +18,7 @@ Command-line tool to convert Apple HealthKit data to a SQLite database.
 5. Run healthkit-to-sqlite on the exported ZIP archive.
 
 ```bash
+# You need to install Rust https://rustup.rs/
 cargo install healthkit-to-sqlite-cli
 healthkit-to-sqlite export.zip sqlite://healthkit.db
 ```
