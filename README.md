@@ -27,10 +27,14 @@ Please [create an issue](https://github.com/jshrake/healthkit-to-sqlite/issues/n
 
 ### Datasette
 
-You can use <https://datasette.io/> to view and explore the resulting SQLite database file. Install the <https://datasette.io/plugins/datasette-geojson-map> plugin to visualize the workout routes data on a map.
+You can use <https://datasette.io/> to view and explore the resulting SQLite database file. 
+
+- Install the <https://datasette.io/plugins/datasette-geojson-map> plugin to visualize the workout routes data on a map.
+- Install the <https://github.com/simonw/datasette-leaflet-geojson> plugin to visualize individual workout routes on a map.
 
 ```bash
 datasette install datasette-geojson-map
+datasette install datasette-leaflet-geojson
 datasette healthkit.db
 ```
 
