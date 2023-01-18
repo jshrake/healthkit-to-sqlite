@@ -7,8 +7,6 @@
 
 Command-line tool to convert Apple HealthKit data to a SQLite database.
 
-![workout-routes-examples](/workout-routes-example.webp)
-
 ## Getting Started
 
 1. Open the [Health](https://www.apple.com/ios/health/) app on your iOS device.
@@ -25,18 +23,6 @@ healthkit-to-sqlite export.zip sqlite://healthkit.db
 
 Please [create an issue](https://github.com/jshrake/healthkit-to-sqlite/issues/new/choose) for all bugs, feature requests, or feedback.
 
-### Datasette
-
-You can use <https://datasette.io/> to view and explore the resulting SQLite database file. 
-
-- Install the <https://datasette.io/plugins/datasette-geojson-map> plugin to visualize the workout routes data on a map.
-- Install the <https://github.com/simonw/datasette-leaflet-geojson> plugin to visualize individual workout routes on a map.
-
-```bash
-datasette install datasette-geojson-map
-datasette install datasette-leaflet-geojson
-datasette healthkit.db
-```
 
 ## Example Queries
 
@@ -105,6 +91,22 @@ where
         "unit": "mi"
     }
 }
+```
+
+## Datasette
+
+You can use <https://datasette.io/> to view and explore the resulting SQLite database file.
+
+```bash
+datasette healthkit.db
+```
+
+* Install the <https://datasette.io/plugins/datasette-geojson-map> plugin to visualize all workout routes in the `Workout` table on a single map.
+* Install the <https://github.com/simonw/datasette-leaflet-geojson> plugin to render an in-row map for each workout route in the `Workout` table.
+
+```bash
+datasette install datasette-geojson-map
+datasette install datasette-leaflet-geojson
 ```
 
 ## Decisions
